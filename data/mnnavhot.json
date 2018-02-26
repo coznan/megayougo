@@ -1,0 +1,22 @@
+ [
+  {
+    "tit": "超市便利",
+    "url": "hot_channel.html?id=0",
+    "ico": "icon-chaoshi"
+  },
+  {
+    "tit": "新鲜果蔬",
+    "url": "hot_channel.html?id=1",
+    "ico": "icon-shuiguo"
+  },
+  {
+    "tit": "零食小吃",
+    "url": "hot_channel.html?id=2",
+    "ico": "icon-lingshi"
+  },
+  {
+    "tit": "鲜花烘焙",
+    "url": "hot_channel.html?id=3",
+    "ico": "icon-xianhua"
+  }
+]

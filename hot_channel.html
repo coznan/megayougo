@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name=viewport content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'>
+	<title></title>
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+    <div id="hot_channel" v-cloak>
+        <div class="wrap_hot">
+            <ul class="shop_list">
+                <li  v-for="item in hot.list" class="sl_item">
+                    <a class="sl_item_l"  :href=" 'shop.html?id='+item.id ">
+                        <img :src="item.thum">
+                        <div class="num_of_shop" v-if="item.num_of_cart">{{item.num_of_cart}}</div>
+                    </a>
+                    <div class="cont">
+                        <a :href=" 'shop.html?id='+item.id " class="slir_cont">
+                            <div class="slir_tit">{{item.tit}}</div>
+                            <div class="slir_titsub">{{item.tit_sub}}</div>
+                            <div class="slir_monthsales">
+                                <yd-rate size=".26rem" color="#ff9f2e" activeColor="#000fff" readonly="true" v-model="item.rank"></yd-rate>| 月售{{item.month_sales}}单
+                            </div>
+                            <div class="slir_transit">{{item.transit}}</div>
+                            <ul class="coupon_list" v-if="item.coupon">
+                                <li>
+                                    <div class="badge cl1">领券</div>
+                                    {{item.coupon}}
+                                </li>
+                                <li>
+                                    <div class="badge cl2">满减</div>
+                                    {{item.coupon}}
+                                </li>
+                            </ul>
+                        </a>
+                        <ul class="hot_list">
+                            <li v-for="sku in item.hot">
+                                <a :href=" 'detail.html?id='+sku.sku_id " class="hli_cont">
+                                <img :src="sku.src" alt="">
+                                <div class="badge">{{sku.badge}}</div>
+                                <h3>￥{{sku.price}}</h3>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <yd-infinitescroll :on-infinite="loadList" ref="infinitescrollDemo">
+                <span slot="doneTip">已到末尾</span>
+                <img slot="loadingTip" src="images/loading10.svg"/>
+            </yd-infinitescroll>
+        </div>
+        <yd-navbar title="新鲜果蔬频道" bgcolor="#f23030" height=".85rem" color="#fff" fontsize=".3rem">
+            <a href="main.html" slot="left">
+                <yd-navbar-back-icon color="#fff"></yd-navbar-back-icon>返回
+            </a>
+        </yd-navbar>
+        <nav_foot :active="1"></nav_foot>
+    </div>
+</body>
+</html>
+<script src="js/vue.js"></script>
+<script src="js/vue-resource.js"></script>
+<script src="js/axios.min.js"></script>
+<script src="js/ydui.js"></script>
+<script src="js/ydui.flexible.js"></script>
+<script src="js/public.js"></script>
+<script src="js/hot_channel.js"></script>

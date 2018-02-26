@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="HandheldFriendly" content="true">
+	<title></title>
+	<link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+	<div id="app" v-cloak>
+		<div class="shop_banner" :class="{'hide':banner_hide}">
+			<a class="sb_l" href="#">
+				<img :src="shop.info.thum">
+            </a>
+            <div class="sb_r">
+                <div class="sbr_tit">{{shop.info.tit}}</div>
+                <div class="sbr_titsub">{{shop.info.tit_sub}}</div>
+                <div class="sbr_monthsales">
+                <yd-rate v-model="shop.info.rank" size=".26rem" color="#ff9f2e" activeColor="#000fff" :readonly="true"></yd-rate>| 月售{{shop.info.month_sales}}单
+                </div>
+                <div class="sbr_transit">{{shop.info.transit}}</div>
+            </div>
+		</div>
+		<div class="wrap_shop" :class="{'up':banner_hide}">
+			<div class="shop_layout">
+				<div class="nav_side navScroll" ref="navScroll">
+                    <ul>
+                        <li v-for="(sub,sub_index) in shop.sort_list"
+                        :class="{'sort_active':sortA==sub_index}">
+                            <h2 @click="navClickH(sub_index,0)">{{sub.tit}}</h2>
+                            <ul class="sort_sub" v-if="sub.sort_sub.length > 1">
+                                <li v-for="(item,item_index) in sub.sort_sub"
+                                :class="{'sort_sub_active':(sortB==item_index&&sortA==sub_index)}"
+                                @click="navClickH(sub_index,item_index)">{{item.tit}}</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right_bar">
+                	<div class="skuScroll">
+	                    <ul class="sku_list">
+	                        <li v-for="(sku,index) in shop.sku_list" :class="'dom'+index" :ref="'dom'+index">
+	                            <a :href=" 'detail.html?id='+sku.sku_id ">
+	                                <div class="sku_pic" :style="{backgroundImage: 'url(' + sku.src + ')'}">
+	                                    <div class="badge">{{sku.badge}}</div>
+	                                </div>
+	                            </a>
+	                            <div class="sku_cont">
+	                                <div class="sku_tit">
+	                                	<p>{{sku.sku_id}}-{{sku.tit | formatTitle}}</p>
+	                                </div>
+	                                <div class="sku_bar">
+	                                    <div class="price"><big>￥{{sku.present_price}}</big><small>￥{{sku.original_price}}</small></div>
+	                                    <div class="spinner" :class="{'shrink':sku.count<1}">
+	                                        <div class="cir left" @click="skuCount(-1,index,shop.sku_list)" ><i class='iconfont icon-move cc'></i></div>
+	                                        <div class="middle" v-if="sku.count">{{sku.count}}</div>
+	                                        <div class="cir right" @click="skuCount(1,index,shop.sku_list)"><i class='iconfont icon-add cc'></i></div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                            <div class="end" v-if="index==shop.sku_list.length-1">已到末尾</div>
+	                        </li>
+	                    </ul>
+	                </div>
+                </div>
+			</div>
+		</div>
+		<yd-navbar :title="shop.info.tit" bgcolor="#f23030" height=".85rem" color="#fff" fontsize=".3rem">
+	        <a href="main.html" slot="left" >
+	        	<yd-navbar-back-icon color="#fff"></yd-navbar-back-icon>返回
+	        </a>
+	    </yd-navbar>
+	    <yd-popup v-model="cartShow" position="bottom" height="60%">
+            <div slot="top" class="pop-top">
+            	<p class="pt-tit">已选商品</p>
+            	<p class="clear-btn" @click="cartClear(shop.sku_list)">清空</p>
+            </div>
+            <ul class="cart_list">
+                <li v-for="(item,index) in shop_cart.list">
+                    <div class="sku_tit">
+                    	<p>{{item.sku_id}}-{{item.tit | formatTitle}}</p>
+                    </div>
+                    <div class="sku_bar">
+                        <div class="price"><big>￥{{item.present_price}}</big></div>
+                        <div class="spinner" :class="{'shrink':item.count<1}">
+                            <div class="cir left" @click="cartCount(-1,index,shop.sku_list)" ><i class='iconfont icon-move cc'></i></div>
+                            <div class="middle" v-if="item.count">{{item.count}}</div>
+                            <div class="cir right" @click="cartCount(1,index,shop.sku_list)"><i class='iconfont icon-add cc'></i></div>
+                        </div>
+                    </div>
+                </li>
+                <li v-show="shop_cart.list.length == 0">购物车已清空</li>
+            </ul>
+        </yd-popup>
+        <div class="shop_foot">
+            <a href="#" class="left" @click="cartShow = !cartShow">
+                <i class="iconfont icon-cartfill">
+	                <div class="num_of_cart" v-if="sum_cart>0">{{sum_cart}}</div>
+                </i>购物车
+            </a>
+            <a :href=" 'settlement.html?id=' + shop_cart.shop_id " class="right"><i class="iconfont icon-moneybagfill"></i>去结算</a>
+        </div>
+	</div>
+</body>
+</html>
+<script src="js/vue.js"></script>
+<script src="js/axios.min.js"></script>
+<script src="js/ydui.js"></script>
+<script src="js/ydui.flexible.js"></script>
+<script src="js/lodash.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script src="js/bscroll.min.js"></script>
+<script src="js/store.everything.min.js"></script>
+<script src="js/fetch.js"></script>
+<script src="js/public.js"></script>
+<script type="text/javascript">
+function getShopId()
+{
+    var shop_id = window.location.search.substr(1);
+    return shop_id;
+};
+/*var shop_id = getShopId();*/
+var call1 = data.get("sp?" + getShopId());
+Promise.all([call1]).then(function (data_arr) {
+    new Vue({
+        mixins: [mixin_common,mixin_ballFly],
+        el: "#app",
+        data: {
+            banner_hide:false,
+            cartShow:false,
+            skuScroll:{},
+            navScroll:{},
+            arrPosition:[],
+            sortA:0,
+            sortB:0,
+            shop:data_arr[0].data.shop,
+            cart:[],
+            shop_cart:{shop:"",shop_id:-1,list:[]}
+        },
+        methods: {
+            getCurrentIndex: function(posY){
+                // 从位置数组中，查找一个最接近当前坐标的值，然后得到“这个值对应的1、2级目录ID”
+                var curSku = _.findLast(this.arrPosition, function(obj) {
+                  return obj.posi<=posY;
+                });
+                this.sortA = curSku.sortA; //将选中的sortA赋给全局sortA以供改变1、2级目录样式等
+                this.sortB = curSku.sortB; //将选中的sortA赋给全局sortA以供改变2级目录样式等
+            },
+            apGet:function () {
+            	var _arr=[],
+            		current_position = 0;
+            	// 遍历商品列表块，由高度算出位置，记入坐标对照表arrPosition
+	            for (var i = 0; i < this.shop.sku_list.length; i++) {
+                    obj = this.shop.sku_list[i];
+                    obj_prev = i>0 ? this.shop.sku_list[i-1]:{};
+                    var boxH = this.$refs["dom"+i][0].clientHeight;
+                    // 如果本单元目录sortA及sortB均与上一个单元相同，则循环不记入_arr数组，只需记录类别边界的坐标数据
+                    if(!(obj.sortA==obj_prev.sortA && obj.sortB==obj_prev.sortB)){
+                        _arr.push( {"id":i,sortA:obj.sortA,sortB:obj.sortB,boxH:boxH,posi:current_position} );
+                    }
+                    current_position += boxH;
+	            };
+	            // console.table(_arr);
+	            this.arrPosition = _arr;
+            },
+            navClickH: function(sortA,sortB){
+                // 通过二级ID找到右边相应的dom块，并将其滚动到位
+                // var target = this.$refs.aaa[sortA].getElementsByClassName('bbb')[sortB];
+                var target = _.find(this.arrPosition, function(obj) {
+                            	return obj.sortA == sortA && obj.sortB == sortB;
+                            }.bind(this));
+                // this.skuScroll.scrollTo(0,-target.posi,300);
+                this.skuScroll.scrollToElement(this.$refs["dom"+target.id][0],300,0,1);  //Y轴向下多偏1，以保证skuScroll越过边界成功激活对应nav
+            }
+        },
+        mounted: function () {
+            var _this = this;
+            this.cartGet();
+            this.shopcartGet(this.shop.info.shop_id,this.shop.info.tit);
+            this.countGet(this.shop.sku_list);
+            this.skuScroll = new BScroll('.skuScroll', {
+                click: true,bounce: true,probeType: 3
+            });
+            this.navScroll = new BScroll('.navScroll', {
+                click: true,bounce: false
+            });
+            this.skuScroll.on('scroll', function (pos) {
+                this.getCurrentIndex(Math.abs(Math.round(pos.y)));
+                // 50像素处，切换大小页头
+                if(pos.y<-50){
+                    this.banner_hide = true;
+                }else{
+                    this.banner_hide = false;
+                };
+            }.bind(this));
+            // 涉及dom高度获取，一定要用nextTick等待
+            Vue.nextTick(function () {
+	            this.apGet();
+            }.bind(this));
+        },
+        watch: {
+            sortA: function (val, oldVal) {
+                // sortA的变化，会导致左边滚动区的高度变化，因此一定要刷新
+                setTimeout(function () {
+                    this.skuScroll.refresh();
+                    this.navScroll.refresh();
+                }.bind(this), 500);  //时间不能小于CSS隐藏动画时间
+            },
+            banner_hide: function (val, oldVal) {
+                // sortA的变化，会导致左边滚动区的高度变化，因此一定要刷新
+                setTimeout(function () {
+                    this.skuScroll.refresh();
+                    this.navScroll.refresh();
+                }.bind(this), 500);  //时间不能小于CSS隐藏动画时间
+            }
+        },
+        computed: {
+            sum_cart: function(){
+              var sum = _.sumBy(this.shop_cart.list, function(item) { return item.count; });
+              return sum;
+            }
+        }
+    });
+});
+</script>

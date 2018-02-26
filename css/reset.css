@@ -1,0 +1,67 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre, 
+form,fieldset,input,textarea,p,blockquote,th,td,button { 
+    padding: 0; 
+    margin: 0;
+} 
+table { 
+    border-collapse: collapse; 
+    border-spacing: 0; 
+} 
+fieldset,img,button { 
+    border: 0; 
+} 
+address,caption,cite,code,dfn,em,strong,th,var { 
+    font-weight: normal; 
+    font-style: normal; 
+} 
+/* 重置列表元素 */
+ol,ul,li { 
+    list-style: none; 
+} 
+caption,th { 
+    text-align: left; 
+} 
+h1,h2,h3,h4,h5,h6 { 
+    font-weight: normal; 
+    font-size: 100%; 
+} 
+q:before,q:after { 
+    content:""; 
+} 
+abbr,acronym { 
+    border: 0; 
+}
+/* 重置文本格式元素 */
+a { text-decoration: none; }
+a:hover { text-decoration: none; outline: none;}
+/* 让非ie浏览器默认也显示垂直滚动条，防止因滚动条引起的闪烁 */
+html { overflow-y: scroll; }
+/* 重置 hr */
+hr {border: none; height: 1px; background-color: #ccc; }
+/* img 搭车：让链接里的 img 无边框 */
+fieldset, img { border: none; }
+/* 注：optgroup 无法扶正 */
+/* 使得表单元素在 ie 下能继承字体大小 */
+button, input, select, textarea {
+    font-size: 100%; 
+}
+body{
+    font-size: 12px;
+}
+/* 以上为YUI reset 基础上修改*/
+
+.clearfix:after{
+    content:""; /* 设置内容为空 */
+    height:0;  /* 高度为0 */
+    line-height:0;  /* 行高为0 */
+    display:block;  /* 将文本转为块级元素 */
+    visibility:hidden;  /* 将元素隐藏 */
+    clear:both;  /* 清除浮动 */
+}
+.clearfix{
+    zoom:1;  /* 为了兼容IE */
+}
+
+[v-cloak] {
+  display: none;
+}

@@ -1,0 +1,55 @@
+{
+  "sku_current": {
+    "sku_id": "1",
+    "slide_pic": [
+      "images/sku1.jpg",
+      "images/sku2.jpg",
+      "images/sku3.jpg",
+      "images/sku4.jpg"
+    ],
+    "tit": "精选海南芒果",
+    "shop": "家乐福超市-广渠路店222",
+    "shop_id": "1",
+    "shop_phone": "078887978999",
+    "comment": "",
+    "present_price": 29.9,
+    "original_price": 39.9
+  },
+  "sku_hot": [
+    {
+      "sku_id": "2",
+      "src": "images/sku1.jpg",
+      "tit": "关联1",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sku_id": "3",
+      "src": "images/sku2.jpg",
+      "tit": "关联2",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sku_id": "4",
+      "src": "images/sku2.jpg",
+      "tit": "关联3",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sku_id": "5",
+      "src": "images/sku2.jpg",
+      "tit": "关联4",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sku_id": "6",
+      "src": "images/sku2.jpg",
+      "tit": "关联5",
+      "present_price": 29.9,
+      "original_price": 39.9
+    }
+  ]
+}

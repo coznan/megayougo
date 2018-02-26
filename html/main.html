@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name=viewport content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'>
+	<title></title>
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/ydui.base.css">
+    <link rel="stylesheet" href="css/ydui.rem.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+    <div id="app" v-cloak > 
+    <div class="head_main">
+        <i class='iconfont icon-jiantouxiangxia' style="opacity: 0;"></i>
+        <a href="select_location.html" class="middle">
+            <i class='iconfont icon-dizhi'></i>
+            <div class="location">{{my.location|substr}}</div>
+            <i class='iconfont icon-jiantouxiangxia'></i>
+        </a>
+        <a href="search.html"><i class='iconfont icon-search'></i></a>
+    </div>
+    <div class="wrap_main">
+        <yd-slider autoplay="0">
+            <yd-slider-item v-for="item in my.slide_pic">
+                <a :href="item.url">
+                    <img :src="item.src">
+                </a>
+            </yd-slider-item>
+        </yd-slider>
+        <div class="nav_hot">
+            <a v-for="item in my.nav_hot" :href="item.url">
+                <div class="ico"><i class='iconfont' :class='item.ico'></i></div>
+                <h2>{{item.tit}}</h2>
+            </a>
+        </div>
+        <div class="h20"></div>
+        
+        <div class="tit_big">
+            <div class="line"></div>
+            <h1><i class='iconfont icon-dianpu'></i> 附近店铺</h1>
+            <div class="line"></div>
+        </div>
+        <ul class="shop_list">
+            <li  v-for="item in my.shop_list">
+                <a class="thum" :href=" 'shop.html?id='+item.id ">  <img :src="item.thum">
+                    <div class="num_of_cart">{{item.num_of_cart}}</div>
+                </a>
+                <div class="cont">
+                    <div class="tit">{{item.tit}}</div>
+                    <div class="tit_sub">{{item.tit_sub}}</div>
+                    <div class="month_sales">
+                    <yd-rate v-model="item.rank" color="#ff9f2e" activeColor="#000fff" :readonly="true"></yd-rate>| 月售{{item.month_sales}}单
+                    </div>
+                    <div class="transit">{{item.transit}}</div>
+                    <div class="hot_list">
+                        <sku v-for="sku in item.hot" :src="sku.src" :badge="sku.badge" :price="sku.price"></sku>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <nav_foot :active="0"></nav_foot>
+</body>
+<script src="js/vue.min.js"></script>
+<script src="js/vue-resource.js"></script>
+<script src="js/ydui.flexible.js"></script>
+<script src="js/ydui.js"></script>
+<script src="js/common.js"></script>
+</html>

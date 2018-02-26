@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="HandheldFriendly" content="true">
+	<title></title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/search.css">
+</head>
+<body>
+	<div id="search">
+		<div class="head_search">
+			<div class="left">
+				<a href="main.html">
+					<i class="iconfont icon-back"></i>
+					返回
+				</a>
+			</div>
+			<search_bar holder="搜索附近的商品或店铺" class="right"></search_bar>
+		</div>
+		<div class="wrap_search">
+			<div class="list_title red">
+	            <div class="line"></div>
+	            <h1><i class="iconfont icon-dianpu"></i> 热门搜索</h1>
+	            <div class="line"></div>
+	        </div>
+			<div class="hot_search">
+				<a href="#" title="" v-for="item in my.list_hot">{{item.tit}}</a>
+			</div>
+			<div class="list_title orange">
+	            <div class="line"></div>
+	            <h1><i class="iconfont icon-dianpu"></i> 历史搜索</h1>
+	            <div class="line"></div>
+	        </div>
+	        <div class="his_search">
+				<a href="#" title="" v-for="item in my.list_history">{{item.tit}}</a>
+			</div>
+		</div>
+		<nav_foot :active="-1"></nav_foot>
+	</div>
+</body>
+</html>
+<script src="js/vue.js"></script>
+<script src="js/axios.min.js"></script>
+<script src="js/ydui.flexible.js"></script>
+<script src="js/search.js"></script>
+<script src="js/public.js"></script>
+<script type="text/javascript">
+var call1 = data.get("search");
+
+Promise.all([call1]).then(function (data_arr) {
+    new Vue({
+        el: "#search",
+        data: {
+            my:data_arr[0].data,
+        },
+    });
+});
+</script>

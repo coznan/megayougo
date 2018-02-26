@@ -1,0 +1,14 @@
+[
+  {
+    "src": "images/slide1.jpg",
+    "url": "detail.html?id=0"
+  },
+  {
+    "src": "images/slide1.jpg",
+    "url": "detail.html?id=1"
+  },
+  {
+    "src": "images/slide3.jpg",
+    "url": "detail.html?id=2"
+  }
+]

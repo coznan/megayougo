@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="HandheldFriendly" content="true">
+	<title></title>
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+	<div id="app" v-cloak>
+		<div class="wrap_detail">
+			<a href="main.html" class="d_back">
+				<i class="iconfont icon-back"></i>
+			</a>
+			<a href="#" class="d_share">
+				<i class="iconfont icon-share"></i>
+			</a>
+			<yd-slider autoplay="3000" class="ys_detail">
+	            <yd-slider-item v-for="pic in sku.detail.slide_pic">
+	                <a ><img :src="pic"></a>
+	            </yd-slider-item>
+	        </yd-slider>
+	        <p class="d_title">{{sku.detail.tit}}</p>
+	        <div class="price_bar">
+		        <div class="price">
+		        	<big><span>￥</span>{{sku.detail.present_price}}</big>
+		        	<small>￥{{sku.detail.original_price}}</small>
+		        </div>
+		        <div class="spinner" :class="{'shrink':sku.detail.count<1}">
+                    <div class="cir left" @click="skuCount(-1,0,[sku.detail])"><i class='iconfont icon-move cc'></i></div>
+                    <div class="middle" v-if="sku.detail.count">{{sku.detail.count}}</div>
+                    <div class="cir right" @click="skuCount(1,0,[sku.detail])">
+                    	<i class="iconfont icon-add cc" v-if="sku.detail.count"></i>
+                    	<span class="join_cart cc" v-if="sku.detail.count<1">加入购物车</span>
+                    </div>
+                </div>
+	        </div>
+	        <div class="shop_bar">
+	        	<a :href="'shop.html?id=' + sku.detail.shop_id" class="shop">
+	        		<i class="iconfont icon-dianpu"></i>
+	        		{{sku.detail.shop}}
+	        	</a>
+	        	<p class="contact">
+	        		<i class="iconfont icon-phone"></i>
+	        		联系商家
+	        	</p>
+	        </div>
+	        <div class="evaluation_bar">
+	        	<h2>商品评价</h2>
+				<h3 v-if="!sku.detail.comment.length">暂无评价</h3>
+	        </div>
+	        <div class="comment" v-html="sku.detail.comment" v-if="sku.detail.comment.length"></div>
+	        <div class="recommend">
+	        	<h2>也许你还喜欢</h2>
+				<a href="#" ><i class="iconfont icon-more"></i></a>
+	        </div>
+	        <ul class="recommend_list" >
+	        	<li v-for="item,index in sku.hotsku">
+	        		<a :href=" 'detail.html?id='+item.sku_id ">
+                        <div class="rl_pic" :style="{backgroundImage: 'url(' + item.src + ')'}"></div>
+                        <div class="rl_tit">{{item.sku_id}}-{{item.tit}}</div>
+                        <div class="price">
+                        	<big>￥{{item.present_price}}</big><small>￥{{item.original_price}}</small>
+                        </div>
+                    </a>
+                    <div class="spinner" :class="{'shrink':item.count<1}">
+                        <div class="cir left" @click="skuCount(-1,index,sku.hotsku)"><i class='iconfont icon-move cc'></i></div>
+                        <div class="middle" v-if="item.count">{{item.count}}</div>
+                        <div class="cir right" @click="skuCount(1,index,sku.hotsku)"><i class='iconfont icon-add cc'></i></div>
+                    </div>
+	        	</li>
+	        </ul>
+		</div>
+		<div class="shop_foot">
+		    <a href="#" class="left" >
+		        <i class="iconfont icon-cartfill">
+		            <div class="num_of_cart" v-if="sum_cart>0">{{sum_cart}}</div>
+		        </i>购物车
+		    </a>
+		    <a :href=" 'settlement.html?id=' + shop_cart.shop_id " class="right"><i class="iconfont icon-moneybagfill"></i>去结算</a>
+		</div>
+    </div>
+</body>
+</html>
+<script src="js/vue.js"></script>
+<script src="js/axios.min.js"></script>
+<script src="js/ydui.js"></script>
+<script src="js/ydui.flexible.js"></script>
+<script src="js/lodash.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script src="js/store.everything.min.js"></script>
+<script src="js/fetch.js"></script>
+<script src="js/public.js"></script>
+<script type="text/javascript">
+var call1 = data.get("sd");
+Promise.all([call1]).then(function (data_arr) {
+    new Vue({
+        mixins: [mixin_common,mixin_ballFly],
+        el: "#app",
+        data: {
+            sku:data_arr[0].data,
+            cart:[],
+            shop_cart:{}
+        },
+        methods:{
+        },
+        mounted: function () {
+        	this.cartGet();
+        	this.shopcartGet(this.sku.detail.shop_id,this.sku.detail.shop);
+        	this.countGet([this.sku.detail]);
+        	this.countGet(this.sku.hotsku);
+        },
+        computed: {
+          sum_cart: function(){
+            var sum = _.sumBy(this.shop_cart.list, function(item) { return item.count; });
+            return sum;
+          }
+        },
+    });
+});
+</script>

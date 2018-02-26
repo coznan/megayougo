@@ -1,0 +1,538 @@
+{
+  "shop": {
+    "tit": "家乐福超市-广渠路店222",
+    "tit_sub": "美嘉优购专送 60分钟",
+    "thum": "images/pp1.jpg",
+    "shop_id": "1",
+    "rank": 2.3,
+    "month_sales": 179,
+    "transit": "0元起送，距离2.58km，基础运费4元"
+  },
+  "sort_list": [
+    {
+      "sort_id": 0,
+      "tit": "特价商品",
+      "banner": "images/slide1.jpg",
+      "sort_sub": [
+        {
+          "sort_sub_id": 1,
+          "tit": "特价A"
+        },
+        {
+          "sort_sub_id": 2,
+          "tit": "特价B"
+        }
+      ]
+    },
+    {
+      "sort_id": 1,
+      "tit": "新鲜水果",
+      "banner": "images/slide2.jpg",
+      "sort_sub": [
+        {
+          "sort_sub_id": 1,
+          "tit": "苹果"
+        },
+        {
+          "sort_sub_id": 2,
+          "tit": "桔子"
+        },
+        {
+          "sort_sub_id": 3,
+          "tit": "桃子"
+        },
+        {
+          "sort_sub_id": 3,
+          "tit": "葡萄"
+        },
+        {
+          "sort_sub_id": 3,
+          "tit": "香蕉"
+        }
+      ]
+    },
+    {
+      "sort_id": 2,
+      "tit": "时令蔬菜",
+      "banner": "images/slide3.jpg",
+      "sort_sub": [
+        {
+          "sort_sub_id": 1,
+          "tit": "蔬菜"
+        }
+      ]
+    },
+    {
+      "sort_id": 3,
+      "tit": "海鲜荟萃",
+      "banner": "images/slide1.jpg",
+      "sort_sub": [
+        {
+          "sort_sub_id": 1,
+          "tit": "大虾"
+        },
+        {
+          "sort_sub_id": 2,
+          "tit": "螃蟹"
+        },
+        {
+          "sort_sub_id": 3,
+          "tit": "鱼类"
+        }
+      ]
+    },
+    {
+      "sort_id": 4,
+      "tit": "休闲零食",
+      "banner": "images/slide2.jpg",
+      "sort_sub": [
+        {
+          "sort_sub_id": 1,
+          "tit": "零食"
+        }
+      ]
+    },
+    {
+      "sort_id": 5,
+      "tit": "日配冷藏",
+      "banner": "images/pic1.jpg",
+      "sort_sub": [
+        {
+          "sort_sub_id": 1,
+          "tit": "冷藏"
+        }
+      ]
+    }
+  ],
+  "sku_list": [
+    {
+      "sortA": "0",
+      "sortB": "0",
+      "sku_id": "1",
+      "shop_id": 1,
+      "src": "images/sku1.jpg",
+      "badge": "热销",
+      "tit": "商品1",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "0",
+      "sortB": "0",
+      "sku_id": "2",
+      "shop_id": 1,
+      "src": "images/sku2.jpg",
+      "badge": "热销",
+      "tit": "商品2",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "0",
+      "sortB": "1",
+      "sku_id": "3",
+      "shop_id": 1,
+      "src": "images/sku3.jpg",
+      "badge": "热销",
+      "tit": "商品3",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "0",
+      "sortB": "1",
+      "sku_id": "4",
+      "shop_id": 1,
+      "src": "images/sku4.jpg",
+      "badge": "热销",
+      "tit": "特价D",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "1",
+      "sortB": "0",
+      "sku_id": "5",
+      "shop_id": 1,
+      "src": "images/sku3.jpg",
+      "badge": "热销",
+      "tit": "苹果-单果约500~600g 新鲜水果特卖",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "1",
+      "sortB": "0",
+      "sku_id": "6",
+      "shop_id": 1,
+      "src": "images/sku2.jpg",
+      "badge": "热销",
+      "tit": "苹果-单果约500~600g 新鲜水果特卖",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "1",
+      "sortB": "0",
+      "sku_id": "7",
+      "shop_id": 1,
+      "src": "images/sku1.jpg",
+      "badge": "热销",
+      "tit": "苹果-单果约500~600g 新鲜水果特卖",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "1",
+      "sortB": "0",
+      "sku_id": "8",
+      "shop_id": 1,
+      "src": "images/sku2.jpg",
+      "badge": "热销",
+      "tit": "苹果-单果约500~600g 新鲜水果特卖",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "1",
+      "sortB": "0",
+      "sku_id": "9",
+      "shop_id": 1,
+      "src": "images/sku3.jpg",
+      "badge": "热销",
+      "tit": "苹果-单果约500~600g 新鲜水果特卖",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "1",
+      "sortB": "1",
+      "sku_id": "10",
+      "shop_id": 1,
+      "src": "images/sku4.jpg",
+      "badge": "热销",
+      "tit": "桔子-单果约500~600g 新鲜水果特卖",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "1",
+      "sortB": "1",
+      "sku_id": "11",
+      "shop_id": 1,
+      "src": "images/sku3.jpg",
+      "badge": "热销",
+      "tit": "桔子-单果约500~600g 新鲜水果特卖",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "1",
+      "sortB": "1",
+      "sku_id": "12",
+      "shop_id": 1,
+      "src": "images/sku3.jpg",
+      "badge": "热销",
+      "tit": "桔子-单果约500~600g 新鲜水果特卖",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "1",
+      "sortB": "2",
+      "sku_id": "13",
+      "shop_id": 1,
+      "src": "images/sku3.jpg",
+      "badge": "热销",
+      "tit": "桃子-单果约500~600g 新鲜水果特卖",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "1",
+      "sortB": "3",
+      "sku_id": "14",
+      "shop_id": 1,
+      "src": "images/sku3.jpg",
+      "badge": "热销",
+      "tit": "葡萄-单果约500~600g 新鲜水果特卖",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "1",
+      "sortB": "3",
+      "sku_id": "15",
+      "shop_id": 1,
+      "src": "images/sku3.jpg",
+      "badge": "热销",
+      "tit": "葡萄-单果约500~600g 新鲜水果特卖",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "1",
+      "sortB": "3",
+      "sku_id": "16",
+      "shop_id": 1,
+      "src": "images/sku2.jpg",
+      "badge": "热销",
+      "tit": "葡萄-单果约500~600g 新鲜水果特卖",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "1",
+      "sortB": "4",
+      "sku_id": "17",
+      "shop_id": 1,
+      "src": "images/sku1.jpg",
+      "badge": "热销",
+      "tit": "香蕉-单果约500~600g 新鲜水果特卖",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "1",
+      "sortB": "4",
+      "sku_id": "18",
+      "shop_id": 1,
+      "src": "images/sku2.jpg",
+      "badge": "热销",
+      "tit": "香蕉-单果约500~600g 新鲜水果特卖",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "1",
+      "sortB": "4",
+      "sku_id": "19",
+      "shop_id": 1,
+      "src": "images/sku3.jpg",
+      "badge": "热销",
+      "tit": "香蕉-单果约500~600g 新鲜水果特卖",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "2",
+      "sortB": "0",
+      "sku_id": "20",
+      "shop_id": 1,
+      "src": "images/sku4.jpg",
+      "badge": "热销",
+      "tit": "蔬菜",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "2",
+      "sortB": "0",
+      "sku_id": "21",
+      "shop_id": 1,
+      "src": "images/sku3.jpg",
+      "badge": "热销",
+      "tit": "蔬菜",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "2",
+      "sortB": "0",
+      "sku_id": "22",
+      "shop_id": 1,
+      "src": "images/sku3.jpg",
+      "badge": "热销",
+      "tit": "蔬菜",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "2",
+      "sortB": "0",
+      "sku_id": "23",
+      "shop_id": 1,
+      "src": "images/sku3.jpg",
+      "badge": "热销",
+      "tit": "蔬菜",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "2",
+      "sortB": "0",
+      "sku_id": "24",
+      "shop_id": 1,
+      "src": "images/sku3.jpg",
+      "badge": "热销",
+      "tit": "蔬菜",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "3",
+      "sortB": "0",
+      "sku_id": "25",
+      "shop_id": 1,
+      "src": "images/sku3.jpg",
+      "badge": "热销",
+      "tit": "大虾",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "3",
+      "sortB": "0",
+      "sku_id": "26",
+      "shop_id": 1,
+      "src": "images/sku2.jpg",
+      "badge": "热销",
+      "tit": "大虾",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "3",
+      "sortB": "0",
+      "sku_id": "27",
+      "shop_id": 1,
+      "src": "images/sku1.jpg",
+      "badge": "热销",
+      "tit": "大虾",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "3",
+      "sortB": "0",
+      "sku_id": "28",
+      "shop_id": 1,
+      "src": "images/sku2.jpg",
+      "badge": "热销",
+      "tit": "大虾",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "3",
+      "sortB": "0",
+      "sku_id": "29",
+      "shop_id": 1,
+      "src": "images/sku3.jpg",
+      "badge": "热销",
+      "tit": "大虾",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "3",
+      "sortB": "1",
+      "sku_id": "30",
+      "shop_id": 1,
+      "src": "images/sku4.jpg",
+      "badge": "热销",
+      "tit": "螃蟹",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "3",
+      "sortB": "1",
+      "sku_id": "31",
+      "shop_id": 1,
+      "src": "images/sku3.jpg",
+      "badge": "热销",
+      "tit": "螃蟹",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "3",
+      "sortB": "1",
+      "sku_id": "32",
+      "shop_id": 1,
+      "src": "images/sku3.jpg",
+      "badge": "热销",
+      "tit": "螃蟹",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "3",
+      "sortB": "2",
+      "sku_id": "33",
+      "shop_id": 1,
+      "src": "images/sku3.jpg",
+      "badge": "热销",
+      "tit": "鱼类",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "3",
+      "sortB": "2",
+      "sku_id": "34",
+      "shop_id": 1,
+      "src": "images/sku3.jpg",
+      "badge": "热销",
+      "tit": "鱼类",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "3",
+      "sortB": "2",
+      "sku_id": "35",
+      "shop_id": 1,
+      "src": "images/sku3.jpg",
+      "badge": "热销",
+      "tit": "鱼类",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "4",
+      "sortB": "0",
+      "sku_id": "36",
+      "shop_id": 1,
+      "src": "images/sku1.jpg",
+      "badge": "热销",
+      "tit": "零食A",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "4",
+      "sortB": "0",
+      "sku_id": "37",
+      "shop_id": 1,
+      "src": "images/sku2.jpg",
+      "badge": "热销",
+      "tit": "零食B",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "5",
+      "sortB": "0",
+      "sku_id": "38",
+      "shop_id": 1,
+      "src": "images/sku3.jpg",
+      "badge": "热销",
+      "tit": "冷藏货",
+      "present_price": 29.9,
+      "original_price": 39.9
+    },
+    {
+      "sortA": "5",
+      "sortB": "0",
+      "sku_id": "39",
+      "shop_id": 1,
+      "src": "images/sku4.jpg",
+      "badge": "热销",
+      "tit": "冷藏货",
+      "present_price": 29.9,
+      "original_price": 39.9
+    }
+  ]
+}

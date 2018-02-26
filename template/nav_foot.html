@@ -1,0 +1,6 @@
+<div class="nav_foot">
+    <a :href="item.url" v-for="(item,index) in nav" :class="{active:index==active}">
+    	<i class='iconfont'  :class="item.ico"></i>
+    	<p>{{item.tit}}</p>
+    </a>
+</div>

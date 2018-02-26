@@ -1,0 +1,28 @@
+{
+  "cart": [
+    {
+      "sku_id": "1",
+      "tit": "商品1",
+      "shop_id": "1",
+      "src": "images/sku1.jpg",
+      "present_price": 29.9,
+      "count": 1
+    },
+    {
+      "sku_id": "2",
+      "tit": "商品2",
+      "shop_id": "1",
+      "src": "images/sku1.jpg",
+      "present_price": 29.9,
+      "count": 2
+    },
+    {
+      "sku_id": "3",
+      "tit": "商品3",
+      "shop_id": "3",
+      "src": "images/sku1.jpg",
+      "present_price": 29.9,
+      "count": 3
+    }
+  ]
+}

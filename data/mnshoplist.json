@@ -1,0 +1,92 @@
+[
+  {
+    "tit": "家乐福超市-广渠路店",
+    "tit_sub": "美嘉优购专送 60分钟",
+    "url": "shop_detail.html?id=0",
+    "thum": "images/pp1.jpg",
+    "shop_id": "1",
+    "rank": 2.3,
+    "month_sales": 179,
+    "transit": "0元起送，距离2.58km，基础运费4元",
+    "hot": [
+      {
+        "sku_id": "0",
+        "src": "images/sku1.jpg",
+        "badge": "热销",
+        "present_price": 39.9
+      },
+      {
+        "sku_id": "0",
+        "src": "images/sku2.jpg",
+        "badge": "省5元",
+        "present_price": 26.9
+      },
+      {
+        "sku_id": "0",
+        "src": "images/sku3.jpg",
+        "badge": "省5元",
+        "present_price": 9.9
+      },
+      {
+        "sku_id": "0",
+        "src": "images/sku4.jpg",
+        "badge": "热销",
+        "present_price": 8.1
+      }
+    ]
+  },
+  {
+    "tit": "沃尔玛-广渠路店",
+    "tit_sub": "美嘉优购专送 60分钟",
+    "url": "shop_detail.html?id=0",
+    "thum": "images/pp2.jpg",
+    "shop_id": "2",
+    "rank": 5,
+    "month_sales": 179,
+    "transit": "0元起送，距离2.58km，基础运费4元",
+    "hot": [
+      {
+        "sku_id": "0",
+        "src": "images/sku1.jpg",
+        "badge": "热销",
+        "present_price": 39.9
+      },
+      {
+        "sku_id": "0",
+        "src": "images/sku2.jpg",
+        "badge": "省5元",
+        "present_price": 26.9
+      }
+    ]
+  },
+  {
+    "tit": "沃尔玛-中山路店",
+    "tit_sub": "美嘉优购专送 60分钟",
+    "url": "shop_detail.html?id=0",
+    "thum": "images/pp2.jpg",
+    "shop_id": "3",
+    "rank": 4.3,
+    "month_sales": 179,
+    "transit": "0元起送，距离2.58km，基础运费4元",
+    "hot": [
+      {
+        "sku_id": "0",
+        "src": "images/sku1.jpg",
+        "badge": "热销",
+        "present_price": 39.9
+      },
+      {
+        "sku_id": "0",
+        "src": "images/sku2.jpg",
+        "badge": "省5元",
+        "present_price": 26.9
+      },
+      {
+        "sku_id": "0",
+        "src": "images/sku3.jpg",
+        "badge": "省5元",
+        "present_price": 9.9
+      }
+    ]
+  }
+]
